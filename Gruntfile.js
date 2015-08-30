@@ -115,7 +115,7 @@ module.exports = function(grunt) {
         files: { src: 'test/**/*.js' },
       },
       ng: {
-        files: { src: files['angularSrc'] },
+        files: { src: files['angularSrc'].concat('!src/angular.bind.js') },
       },
       ngAnimate: {
         files: { src: 'src/ngAnimate/**/*.js' },
@@ -156,7 +156,11 @@ module.exports = function(grunt) {
     },
 
     jscs: {
-      src: ['src/**/*.js', 'test/**/*.js'],
+      src: [
+        'src/**/*.js',
+        'test/**/*.js',
+        '!src/angular.bind.js' // we ignore this file since contains an early return statement
+      ],
       options: {
         config: ".jscsrc"
       }
@@ -175,8 +179,7 @@ module.exports = function(grunt) {
       },
       angular: {
         dest: 'build/angular.js',
-        src: util.wrap([files['angularSrc']], 'angular')
-                 .concat('src/ngLocale/angular-locale_en-us.js'),
+        src: util.wrap([files['angularSrc']], 'angular'),
         styles: {
           css: ['css/angular.css'],
           generateCspCssFile: true,

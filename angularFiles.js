@@ -14,6 +14,7 @@ var angularFiles = {
 
     'src/ng/anchorScroll.js',
     'src/ng/animate.js',
+    'src/ng/animateCss.js',
     'src/ng/browser.js',
     'src/ng/cacheFactory.js',
     'src/ng/compile.js',
@@ -25,6 +26,7 @@ var angularFiles = {
     'src/ng/httpBackend.js',
     'src/ng/interpolate.js',
     'src/ng/interval.js',
+    'src/ng/locale.js',
     'src/ng/location.js',
     'src/ng/log.js',
     'src/ng/parse.js',
@@ -75,7 +77,10 @@ var angularFiles = {
     'src/ng/directive/script.js',
     'src/ng/directive/select.js',
     'src/ng/directive/style.js',
-    'src/ng/directive/validators.js'
+    'src/ng/directive/validators.js',
+    'src/angular.bind.js',
+    'src/publishExternalApis.js',
+    'src/ngLocale/angular-locale_en-us.js'
   ],
 
   'angularLoader': [
@@ -88,6 +93,7 @@ var angularFiles = {
     'ngAnimate': [
       'src/ngAnimate/shared.js',
       'src/ngAnimate/body.js',
+      'src/ngAnimate/rafScheduler.js',
       'src/ngAnimate/animateChildrenDirective.js',
       'src/ngAnimate/animateCss.js',
       'src/ngAnimate/animateCssDriver.js',
@@ -178,28 +184,26 @@ var angularFiles = {
     'bower_components/jquery/dist/jquery.js',
     'test/jquery_remove.js',
     '@angularSrc',
-    'src/publishExternalApis.js',
     '@angularSrcModules',
     '@angularScenario',
-    '@angularTest',
-    'src/ngLocale/angular-locale_en-us.js'  // we need an ngLocale module
+    '@angularTest'
   ],
 
   'karmaExclude': [
     'test/jquery_alias.js',
     'src/angular-bootstrap.js',
-    'src/ngScenario/angular-bootstrap.js'
+    'src/ngScenario/angular-bootstrap.js',
+    'src/angular.bind.js'
   ],
 
   'karmaScenario': [
     'build/angular-scenario.js',
-    'build/docs/docs-scenario.js',
-    'src/ngLocale/angular-locale_en-us.js'  // we need an ngLocale module
+    'build/docs/docs-scenario.js'
   ],
 
   "karmaModules": [
     'build/angular.js',
-    '@angularSrcModules',,
+    '@angularSrcModules',
     'src/ngScenario/browserTrigger.js',
     'test/helpers/*.js',
     'test/ngMessageFormat/*.js',
@@ -209,26 +213,23 @@ var angularFiles = {
     'test/ngResource/*.js',
     'test/ngSanitize/**/*.js',
     'test/ngTouch/**/*.js',
-    'test/ngAria/*.js',
-    'src/ngLocale/angular-locale_en-us.js'  // we need an ngLocale module
+    'test/ngAria/*.js'
   ],
 
   'karmaJquery': [
     'bower_components/jquery/dist/jquery.js',
     'test/jquery_alias.js',
     '@angularSrc',
-    'src/publishExternalApis.js',
     '@angularSrcModules',
     '@angularScenario',
-    '@angularTest',
-    'src/ngLocale/angular-locale_en-us.js'  // we need an ngLocale module
-
+    '@angularTest'
   ],
 
   'karmaJqueryExclude': [
     'src/angular-bootstrap.js',
     'src/ngScenario/angular-bootstrap.js',
-    'test/jquery_remove.js'
+    'test/jquery_remove.js',
+    'src/angular.bind.js'
   ]
 };
 
